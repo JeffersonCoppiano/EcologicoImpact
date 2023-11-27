@@ -1,14 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.mycompany.ecologicoimpact;
+public class Bicicleta implements ImpactoEcologico {
+    private double mantenimiento;
+    private double reciclaje;
+    private double componentesMateriales;
 
-/**
- *
- * @author LENOVO
- */
-public class Bicicleta {
-    
+    public Bicicleta(double mantenimiento, double reciclaje, double componentesMateriales) {
+        this.mantenimiento = mantenimiento;
+        this.reciclaje = reciclaje;
+        this.componentesMateriales = componentesMateriales;
+    }
+
+    @Override
+    public double calcularImpactoEcologico() {
+        return mantenimiento + reciclaje - componentesMateriales;
+    }
+
+    @Override
+    public String getIdentificacion() {
+        return "Bicicleta";
+    }
 }
